@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        // cities=["Chennai","Bangalore","Hyderabad","Mumbai","Ranchi","Patna","Pune"];
+        // document.writeln(cities.length);
+        // document.writeln(cities);
+        // for(i in cities)
+        // {
+        //     document.writeln(cities[i]+"<br>");
+        // }
+        // document.writeln("I OF <br>");
+        // for (i of cities)
+        // {
+        //     document.writeln(i+"<br>")
+        // }
+        // cities[9]="chattishghar";
+        // cities[11]="Kolkata";
+        // document.writeln("cities:"+ cities+"<br>");
+        // cities[17]=300;
+        // document.writeln("cities:"+ cities+"<br>");
+        // cities.sort();
+        // document.writeln("Sorted cities:"+ cities+"<br>");
+        // cities.reverse();
+        // document.writeln("Reversedcities:"+ cities);
+
+        var array=["asd","fgh","jkl"];
+        for(i in array)
+        {
+        document.writeln(array[i]+"<br>");
+        }
+        document.writeln("<hr>");
+        for(x of array)
+        {
+            document.writeln(x +"<br>")
+        }
+        document.writeln("<hr>");
+        array.reverse();
+        for(x of array)
+        {
+            document.writeln(x +"<br>")
+        }
+        document.writeln("<hr>");
+        array.sort();
+        for(x of array)
+        {
+            document.writeln(x +"<br>")
+        }
+        document.writeln("<hr>");
+        document.writeln(array.length + "<br>");
+        document.writeln("<hr>");
+        var v = array.indexOf("asd");
+        if (v==0)
+        {
+            document.writeln(v);
+        }
+        document.writeln("<hr>");
+        document.writeln(array.join("....") +"<hr>")
+        array.push("qwe");
+        array.push("rty");
+        document.writeln(array.join("....") +"<hr>")
+        array.pop();
+        document.writeln(array.join("....") +"<hr>")
+    </script>
+</body>
+</html>

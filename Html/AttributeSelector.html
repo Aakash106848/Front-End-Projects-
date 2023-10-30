@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style1.css">
+        <style>
+        body{
+            background-image: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=1060&t=st=1695624898~exp=1695625498~hmac=eb290a0321f23a257e8bcbf4c0bfb3e349fb257bb6e7cfb278da53fb2eb7aaee");
+        }
+        /* .font{
+            color:tan
+        } */
+        </style>
+        </head>
+    <body  class="font">
+            <h1>User Information</h1>
+        <form action="#" method="#">
+            <label>Employee ID</label><input type="text" name="employeeID"/><br>
+            <label for="Fname">First Name</label><input type="text"8 name="FirstName" placeholder="Enter Your Name" required maxlength="30" minlength="5"/><br>   
+            <label>Age</label><input type="number" min="18" max="60" name="empAge" size="1"/><br>
+            <input type="button" onclick="saveData()"value="Save"/>&nbsp;&nbsp;<input type="button" onclick="removeData()"value="remove"/>&nbsp;&nbsp;<input type="button" onclick="modifyData()"value="Modify"/><br>
+            <label>PreferedVolume</label><input class="appearance" type="range"   min="0" max="100"  oninput="UpdateVolume()" name="PreferedVolume" Style="width:1000;"/><input type="text"  name="VolLevel" style="width: 60px; height: 15px;" readonly/><br>
+            <label>Date Of Joining:</label><input oninput="UpdateDate()" type="date" min="2001-01-01" max="2023-09-26"name="joindate"/><input type="text" name="joindate1"/><br>
+            <label>Upload your resume:</label><input type="file" accept="image/*, audio/mp3" name="resume"/><br>
+            <label>Your Email-ID:</label><input type="email" name="emailID" minlength="6"/><br>
+
+            <script>
+                function UpdateVolume(){
+                    document.forms[0].VolLevel.value=document.forms[0].PreferedVolume.value+"%" ;
+                }
+                function UpdateDate(){
+                     document.forms[0].joindate1.value=document.forms[0].joindate.value;
+                 }
+
+                function saveData()
+                {
+                    var v = document.forms[0].employeeID.value;
+                    var a = document.forms[0].FirstName.value;
+                    var b = document.forms[0].empAge.value;
+                    console.log(v+"\t\t"+a+"\t\t"+b);
+                    localStorage.employeeID=v;
+                    localStorage.FirstName=a;
+                    localStorage.empAge=b;
+                }
+                function removeData()
+                {   
+
+                    localStorage.removeItem("empAge");
+                    localStorage.removeItem("employeeID");
+                    localStorage.removeItem("FirstName");
+                }
+                function modifyData()
+                {
+                    var v = document.forms[0].employeeID.value;
+                    var a = document.forms[0].FirstName.value;
+                    var b = document.forms[0].empAge.value;
+                    localStorage.setItem("empAge",b);
+                    localStorage.setItem("employeeID",v);
+                    localStorage.setItem("FirstName",a);
+                }
+            </script>    
+        </form> 
+    </body>
+    </html>

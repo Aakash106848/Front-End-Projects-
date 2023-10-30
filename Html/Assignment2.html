@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <style>
+        .Font
+        {
+            Color:chartreuse
+        }
+        @media screen and(max-width:700px){
+            img
+            {
+                width:90%;
+            }
+        }
+        @media screen and(max-width:500px){
+            img
+            {
+                width:95%;
+            }
+        }
+            @media screen and(max-width:300px){
+            img
+            {
+                width:90%;
+
+            }
+        }
+    </style>
+     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <img src="Chandrayaan.jpg" />
+        <center>
+            <h1>User Information</h1>
+        <form action="#" method="#">
+        <fieldset style="width:50px;height: 50px;">
+            <label>First Name    :</label><input type="text" name="FirstName"/><br><br><br>
+        </fieldset>
+        <fieldset>
+            <label>Last Name     :</label><input type="text" name="LastName"/><br><br><br>
+        </fieldset>
+        <fieldset>
+            <label>Address       :</label><input type="text" style="height: 100px;width: 200px;"  name="Address"/><br><br><br>
+        </fieldset>
+        <fieldset>
+            <label>Mobile Number :</label><input type="text" maxlength="10" name="MobileNumber"/><br><br><br>
+        </fieldset>
+        <fieldset>
+            <label>E-mail         :</label><input type="email" minlength="6" name="Email"/><br><br><br>
+        </fieldset>
+        <fieldset>
+        <legend>
+            Select Gender
+        </legend><br>
+            <input type="radio" name="Gender" value="M"/>Male<br>
+            <input type="radio" name="Gender" value="F"/>Female<br>
+        <br><br>
+        </fieldset>
+        <fieldset>
+        <legend>
+            Hobbies</legend>
+            <input type="checkbox" name="hobbies" value="Cricket"/>Cricket<br>
+            <input type="checkbox" name="hobbies" value="Cricket"/>Music<br>
+            <input type="checkbox" name="hobbies" value="Cricket"/>Football<br>
+            
+        </fieldset>
+
+            <input type="button" onclick="saveData()" value="Add"/>&nbsp;&nbsp;<input onclick="getData()" type="button" value="Get"/>
+        </form>
+    </fieldset>
+        <table class="Font" bgcolor="black" cellspacing="5px" border="5px" style="border-style: dotted;border-color:slateblue; border: radius 4px;"  align="center" width="500px" height="200px">
+            <tr align="center"><td >First Name</td><td>Last Name</td><td>Address</td><td>Mobile Number</td><td>E-mail</td><td></td></tr>
+            <tr><td id="z"></td><td id="x"></td><td id="c"></td><td id="v"></td><td id="b"></td></tr>
+        </table>
+        </fieldset>
+        </center>
+        <script>
+              function saveData()
+                {
+                    var a = document.forms[0].FirstName.value;
+                    var b = document.forms[0].LastName.value;
+                    var c = document.forms[0].Address.value;
+                    var d = document.forms[0].MobileNumber.value;
+                    var e = document.forms[0].Email.value;
+                    console.log(a+"\t\t"+b+"\t\t"+c+"\t\t"+d+"\t\t"+e);
+                    localStorage.FirstName=a;
+                    localStorage.LastName=b;
+                    localStorage.Address=c;
+                    localStorage.MobileNumber=d;
+                    localStorage.Email=e;
+                } 
+                function getData(){
+                    /*localStorage.getItem("Key")*/
+                    document.getElementById("z").innerHTML = localStorage.getItem("FirstName"); 
+                    document.getElementById("x").innerHTML = localStorage.getItem("LastName"); 
+                    document.getElementById("c").innerHTML = localStorage.getItem("Address"); 
+                    document.getElementById("v").innerHTML = localStorage.getItem("MobileNumber"); 
+                    document.getElementById("b").innerHTML = localStorage.getItem("Email"); 
+                } 
+            </script>
+    </body>
+</html>

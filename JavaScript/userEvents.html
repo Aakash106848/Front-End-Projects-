@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <center>
+    <form>
+        <fieldset>
+        <input type="number" id="CE" min="1" max="1000000" name="Num"/><br><br>
+        <input type="button" onclick="startCount()" value="start" id="CEB"/>
+        </fieldset>
+    </center>
+    </form>
+    <script>
+        var event = new Event('count');
+        var counter=0;
+        function countAndShow() {
+
+            setInterval(function() {
+               
+                if (counter <= 100) {
+                document.getElementById('CE').value = counter++;
+            } else {
+                document.getElementById('CE').value = counter--;
+            }
+
+            if (counter < 0) {
+                clearInterval(intervalId); // Stop the interval
+            }
+        }, 1000); // Change the interval time in milliseconds as per your requirement
+    }
+        function startCount() {
+            var intervalId = setInterval(countAndShow, 50);
+            document.dispatchEvent(event);
+        }
+        document.addEventListener('count', countAndShow);
+   </script>
+</body>
+</html>

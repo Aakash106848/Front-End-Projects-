@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object</title>
+</head>
+<body>
+<script>
+    var obj = new Object();
+    obj.Empid=100;
+    obj.Empname="John";
+    obj.Empage=20;
+    document.writeln(obj.Empid+"&nbsp;&nbsp;"+obj.Empname);
+    document.writeln("<br>"+obj["Empname"]+"&nbsp;&nbsp;"+obj["Empage"]);
+    //Associatice Array
+    var dict = [];
+    dict["Id"]=100;
+    dict["name"]="John";
+    dict["age"]=20;
+    document.writeln("<br>"+dict["Id"]+"<br>"+dict["name"]+"<br>"+dict["age"]+"<br>");
+    obj.getName=function(){
+        return obj.Empname;
+    }
+    document.writeln(obj.getName()+"<br>");
+    obj.setName=function(name){
+        obj.Empname=name;
+    }
+    obj.setName("Johny");
+    document.writeln(obj.getName()+"<br>");    
+    
+</script>    
+</body>
+</html>

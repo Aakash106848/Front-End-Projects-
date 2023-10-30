@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Exception</title>
+</head>
+<body>
+    <div id="di" style="color:red"></div>
+</body>
+    <script>
+        var age = prompt("Enter your Age",18);
+        try{
+            if (age >=18 && age<=60)
+            {
+                alert("Eligible");
+            }
+            else{
+                throw("Not Eligible");
+            }
+        }
+        catch(e){
+            var divTag=document.getElementById("di");
+            divTag.innerHTML=e;
+        }
+        finally{
+            document.write("Finally,pls run away");
+            window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ","__self");  
+        };
+    </script>
+
+</html>

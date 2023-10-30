@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<script>
+    function product(num1,num2)
+    {
+        document.writeln("product :" + (num1*num2));
+    }
+    function sum(num1,num2)
+    {
+        document.writeln("sum :" + (num1+num2));
+    }
+    function sumProducts(p,s,n1,n2)
+    {
+        p(n1,n2);
+        s(n1,n2);
+    }
+    sumProducts(product,sum,100,200)
+</script>    
+</body>
+</html>

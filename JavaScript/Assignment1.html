@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <form>
+        <input type="text" name="TextField" id="xq" /><br>
+        <input type="radio"  name="r">Male</input><br>
+        <input type="radio"  name="r">Female</input><br><br>
+
+    </form>
+    <input type="button" onclick="Add()" value="Add">
+    <input type="button"onclick="Remove()" value="Remove">
+    <input type="button" onclick="Replace()" value="Replace">
+    <script>
+            function Add()
+            {
+            var p = window.prompt("Enter the Type of input you need");
+            var elem=document.createElement('input');
+            elem.type=p;
+            elem.value="";
+            document.forms[0].appendChild(elem);
+            }
+             function Remove()
+            {
+                 var p = document.forms[0].lastChild;
+                 document.forms[0].removeChild(p);
+            }
+            function Replace()
+            {
+                var p = document.forms[0].lastChild;
+                var x = window.prompt("Enter Replacement Type");
+                p.type=x;
+            }
+
+        </script>
+
+    
+</body>
+</html>

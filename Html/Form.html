@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>User Information</title>
+        <style>
+        form{
+            background-image: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=1060&t=st=1695624898~exp=1695625498~hmac=eb290a0321f23a257e8bcbf4c0bfb3e349fb257bb6e7cfb278da53fb2eb7aaee");
+        }
+         /* .appearance
+        {
+             appearance:slider-vertical; 
+            color-scheme:blue;
+        }   */
+        .font{
+            color:tan
+        }
+        </style>
+        </head>
+    <body  class="font">
+        <script>
+            function ConfirmReset()
+            {
+                var status=window.confirm("want to reset and lose your data?");
+                console.log(status);
+                return status;
+            }
+        </script>
+        <center>
+            
+            
+            <h1>User Information</h1>
+            <fieldset style="border: 4px; border-style:ridge; width: fit-content;">
+             <form action="#" method="#" novalidate onreset="return ConfirmReset()" >
+            <label>Employee ID</label><input type="text" name="employeoeID"/><br><br>
+            <label for="Fname">First Name</label><input type="text"8 name="FirstName" placeholder="Enter Your Name" required maxlength="30" minlength="5"  onblur="validateFname()" onfocus="UserWrite()"/><br> <label id="nameerror"></label><br>
+            <label>Age</label><input type="number" min="18" max="60" name="empAge" size="1" onblur="validateAge()" onfocus="UserWrite1()"/><br><label id="nameerror1"></label><br>
+            <input type="button" onclick="saveData()"value="Save"/>&nbsp;&nbsp;<input type="button" onclick="removeData()"value="remove"/>&nbsp;&nbsp;<input type="button" onclick="modifyData()"value="Modify"/><br><br>
+            <label>PreferedVolume</label><input class="appearance" type="range"   min="0" max="100"  oninput="UpdateVolume()" name="PreferedVolume" Style="width:100;"/><input type="text"  name="VolLevel" style="width: 60px; height: 15px;" readonly/><br><br>
+            <label>Date Of Joining:</label><input oninput="UpdateDate()" type="date" min="2001-01-01" max="2023-09-26"name="joindate"/><input type="text" name="joindate1"/><br><br>
+            <label>Upload your resume:</label><input type="file" accept="image/*, audio/mp3" name="resume"/><br><br>
+            <label>Your Email-ID:</label><input type="email" name="emailID" minlength="6"/><br><br>
+            <input type="checkbox" name="SaveStatus" id="Cbox" onclick="EnableSave()"/>Agree to Terms and Conditions<br><br>
+            <input type="button" value="save" disabled id="DES">
+            <input type="reset">
+             </fielset>
+            <script>
+                function UpdateVolume(){
+                    document.forms[0].VolLevel.value=document.forms[0].PreferedVolume.value+"%" ;
+                }
+                function UpdateDate(){
+                     document.forms[0].joindate1.value=document.forms[0].joindate.value;
+                 }
+                </Script>
+            <script>
+                function saveData()
+                {
+                    var v = document.forms[0].employeeID.value;
+                    var a = document.forms[0].FirstName.value;
+                    var b = document.forms[0].empAge.value;
+                    console.log(v+"\t\t"+a+"\t\t"+b);
+                    localStorage.employeeID=v;
+                    localStorage.FirstName=a;
+                    localStorage.empAge=b;
+                }
+                function removeData()
+                {   
+
+                    localStorage.removeItem("empAge");
+                    localStorage.removeItem("employeeID");
+                    localStorage.removeItem("FirstName");
+                }
+                function modifyData()
+                {
+                    var v = document.forms[0].employeeID.value;
+                    var a = document.forms[0].FirstName.value;
+                    var b = document.forms[0].empAge.value;
+                    localStorage.setItem("empAge",b);
+                    localStorage.setItem("employeeID",v);
+                    localStorage.setItem("FirstName",a);
+                }
+                function validateFname(){
+                    var fname=document.forms[0]["FirstName"].value;
+                    if(fname==""){
+                        var nerror = document.getElementById("nameerror");
+                        nerror.style.color="red";
+                        nerror.innerHTML="Please enter first name";   
+                    }
+                } 
+                function UserWrite()
+                {
+                    var nerror = document.getElementById("nameerror");
+                    nerror.innerHTML="";
+                } 
+             
+                function validateAge(){
+                    var age=document.forms[0]["empAge"].value;
+                    if(age==""){
+                        var nerror = document.getElementById("nameerror1");
+                        nerror.style.color="red";
+                        nerror.innerHTML="Please enter first name";  
+                    }
+                } 
+                function UserWrite1(){
+                    var nerror = document.getElementById("nameerror1");
+                    nerror.innerHTML="";
+                }
+                function EnableSave()
+                {
+                    if (document.getElementById("Cbox").checked)
+                    {
+                    document.getElementById("DES").disabled=false;
+                    }
+                    else
+                    {
+                    document.getElementById("DES").disabled=true;
+                    }
+                }
+            </script>    
+        </form> 
+        </center>
+    </body>
+    </html>

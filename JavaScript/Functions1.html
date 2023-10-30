@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+    function test(num1,num2)
+    {
+        document.writeln(Math.sqrt(num1)+"<br>");
+        document.writeln(Math.sqrt(num2)+"<br>");
+    }
+    test(100,200);
+    test(625,121);
+    var validate=function(age)
+    {
+        if(age>=18 || age<=60)
+        {
+            document.writeln("Eligible");
+        }
+        else
+        {
+            document.writeln("Not Eligible");
+        }
+    }
+    validate(21);
+    var calc=new Function("num1,num2","{document.writeln(num1*num2);document.writeln(num1+num2)}")
+    calc(100,200);
+</script>
+</head>
+<body>
+    
+</body>
+</html>
